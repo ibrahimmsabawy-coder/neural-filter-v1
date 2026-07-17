@@ -6,7 +6,7 @@
 *   **Step 2 The Noise (`gaussian_noise`):** The next step is to add noise to the clean signal. This is done by generating Gaussian noise using the `np.random.normal` function. The noise is then added to the clean signal to simulate real-world conditions where neural signals are often contaminated by various sources of noise and artifacts. The resulting signal is saved as `messy_signal`, representing the chaotic raw data a prosthetic electrode would actually read, which will be used for further processing.
 *   **Step 3 Filtering (`filtered_signal`):** The final step is to filter the `messy_signal` using digital signal processing. Specifically, the `for` loop in the code acts as a **moving average filter**. The goal of this step is to remove unwanted noise and artifacts from the signal, allowing for a cleaner representation of the user's intent to move the limb. The `filtered_signal` can then be used to control prosthetic limbs or other assistive devices more accurately and efficiently.
 
-##The math
+
 ### The Math
 
 The math behind this filter is actually pretty straightforward. To make the filter work, we use a `window_size` of 5. This is done to create a "window" of data points around every single point $i$ in our signal, looking 5 points backward and 5 points forward. 
